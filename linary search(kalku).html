@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="kalku()">Start kalku</button>
+
+    <script>
+
+/* en enkel pseudokode som beskriver algoritmen:  
+ 
+START
+    PROMPT brukeren for første tall (n1)
+    KONVERTER n1 til flyttall
+    PROMPT brukeren for andre tall (n2)
+    KONVERTER n2 til flyttall
+    PROMPT brukeren for operatør (operatør)
+    
+    IF operatør er '+'
+        resultat = n1 + n2
+    ELSE IF operatør er '-'
+        resultat = n1 - n2
+    ELSE IF operatør er '*'
+        resultat = n1 * n2
+    ELSE IF operatør er '/'
+        IF n2 er ikke 0
+            resultat = n1 / n2
+        ELSE
+            VIS "Kan ikke dele med null"
+            AVSLUTT
+    ELSE
+        VIS "Ugyldig operatør"
+        AVSLUTT
+    
+    VIS resultat
+END */
+        function kalku() {
+            let n1 = parseFloat(prompt("Tast inn første tallet"));
+            let n2 = parseFloat(prompt("Tast inn andre tallet"));
+            let operatør = prompt("Velg en operatør (/, +, *, -)");
+
+            let resultat;
+
+            switch (operatør) {
+                case '+':
+                    resultat = n1 + n2;
+                    break;
+                case '-':
+                    resultat = n1 - n2;
+                    break;
+                case '*':
+                    resultat = n1 * n2;
+                    break;
+                case '/':
+                    if (n2 !== 0) {
+                        resultat = n1 / n2;
+                    } else {
+                        alert("Kan ikke dele med null");
+                        return;
+                    }
+                    break;
+                default:
+                    alert("Ugyldig operatør");
+                    return;
+            }
+
+            alert(`Resultatet er: ${resultat}`);
+        }
+    </script>
+</body>
+</html>
